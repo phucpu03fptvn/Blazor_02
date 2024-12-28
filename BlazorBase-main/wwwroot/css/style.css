@@ -1,0 +1,23 @@
+/* wwwroot/css/site.css */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-left: 10px;
+}
+
+.btn-black {
+  background-color: black !important;
+}
+
+.btn-red {
+  background-color: red !important;
+}
+
+.btn-silver {
+  background-color: silver !important;
+  color: black !important;
+}

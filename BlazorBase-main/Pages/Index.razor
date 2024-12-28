@@ -2,8 +2,35 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h2 class="fw-bold">Change color car</h2>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col-lg-4">
+    @if (!string.IsNullOrEmpty(carColor))
+    {
+        <img src="/products/@carColor-car.jpg" alt="Car color" style="width: 300px; height: auto;" />
+    }
+    else
+    {
+        <img src="/products/steel-car.jpg" alt="Car color" style="width: 300px; height: auto;" />
+    }
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div class="col-lg-8">
+    @foreach(var color in carColors)
+{
+    <button class="btn btn-@color.ToLower()" @onclick="() => ChangeCarColor(color)">@color color</button>
+}
+</div>
+</div>
+
+
+@code {
+    private string carColor = ""; 
+    private string[] carColors = { "Black", "Red", "Silver" }; 
+
+    private void ChangeCarColor(string color)
+    {
+        carColor = color.ToLower();  
+    }
+}
